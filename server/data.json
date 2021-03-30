@@ -1,11 +1,20 @@
 {
     "students": [
         {
-            "id": 0,
+            "id": 1,
             "name": "Pap Gergő",
             "email": "pap.gerg@gmail.com",
             "points": 0,
             "active": "true"
+        }
+    ],
+    "quizes": [
+        {
+            "id": 1,
+            "title": "Arrow Function",
+            "description": "A quiz for learning about arrow functions",
+            "questions": [],
+            "active": true
         }
     ]
 }
