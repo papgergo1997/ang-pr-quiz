@@ -42,5 +42,15 @@ export class BaseServiceService<T extends { id: number }> {
     return this.http.patch<T>(`${this.apiUrl}/${this.entityName}`, entity);
   }
 
+  remove(entity: T): void {
+    this.http.delete<T>(`${this.apiUrl}/${this.entityName}/${entity.id}`)
+      .pipe(
+        tap(e => this.getAll())
+      ).subscribe(
+        () => { },
+        err => this.error$.next(err)
+      );
+  }
+
 
 }
