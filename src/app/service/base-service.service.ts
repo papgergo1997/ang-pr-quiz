@@ -38,5 +38,9 @@ export class BaseServiceService<T extends { id: number }> {
     );
   }
 
+  update(entity: T): Observable<T> {
+    return this.http.patch<T>(`${this.apiUrl}/${this.entityName}`, entity);
+  }
+
 
 }
