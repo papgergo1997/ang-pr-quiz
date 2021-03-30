@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit {
   list$: BehaviorSubject<any>;
 
   constructor(private quizService: QuizService) {
+    this.quizService.getAll()
     this.list$ = this.quizService.list$;
   }
 

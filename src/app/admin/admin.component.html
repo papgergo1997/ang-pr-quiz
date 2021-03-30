@@ -12,7 +12,13 @@
                         <th></th>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let quiz of list$ | async"></tr>
+                        <tr *ngFor="let quiz of list$ | async">
+                            <td>{{quiz.id}}</td>
+                            <td>{{quiz.title}}</td>
+                            <td>{{quiz.description}}</td>
+                            <td>{{quiz.questions}}</td>
+                            <td>{{quiz.active}}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
