@@ -14,7 +14,7 @@ export class BaseServiceService<T extends { id: number }> {
   error$: Subject<string> = new Subject();
 
   constructor(
-    private http: HttpClient,
+    public http: HttpClient,
     @Inject('entityName') entityName: string,
   ) {
     this.entityName = entityName;
