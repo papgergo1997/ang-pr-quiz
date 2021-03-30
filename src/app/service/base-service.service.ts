@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,11 @@ export class BaseServiceService<T extends { id: number }> {
       .subscribe(
         list => this.list$.next(list),
         err => console.error(err)
-      )
+      );
+  }
+
+  get(id: number): Observable<T> {
+    return this.http.get<T>(`${this.apiUrl}/${this.entityName}/${id}`);
   }
 
 
